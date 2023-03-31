@@ -1,0 +1,65 @@
+"@context": {
+"testdgraph2": "<http://testdgraph2.com/vocab#>",
+"rdf": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+"rdfs": "<http://www.w3.org/2000/01/rdf-schema#>",
+"xsd": "<http://www.w3.org/2001/XMLSchema#>",
+"support": {
+"@id": "testdgraph2:support",
+"@type": "rdf:Property",
+"rdfs:domain": "testdgraph2:Evidence",
+"rdfs:range": "testdgraph2:Claim"
+},
+"oppose": {
+"@id": "testdgraph2:oppose",
+"@type": "rdf:Property",
+"rdfs:domain": "testdgraph2:Evidence",
+"rdfs:range": "testdgraph2:Claim"
+},
+"contextualize": {
+"@id": "testdgraph2:contextualize",
+"@type": "rdf:Property",
+"rdfs:domain": "testdgraph2:Source",
+"rdfs:range": "testdgraph2:Evidence"
+},
+"inform": {
+"@id": "testdgraph2:inform",
+"@type": "rdf:Property"
+},
+"author": {
+"@id": "testdgraph2:author",
+"@type": "rdf:Property",
+"@required": true,
+"@datatype": "xsd:string"
+},
+"uri": {
+"@id": "testdgraph2:URI",
+"@type": "rdf:Property",
+"@required": true,
+"@datatype": "xsd:anyURI"
+},
+"title": {
+"@id": "testdgraph2:title",
+"@type": "rdf:Property",
+"@required": true,
+"@datatype": "xsd:string"
+},
+"publisher": {
+"@id": "testdgraph2:publisher",
+"@type": "rdf:Property",
+"@required": false,
+"@datatype": "xsd:string"
+},
+"date": {
+"@id": "testdgraph2:date",
+"@type": "rdf:Property",
+"@required": false,
+"@datatype": "xsd:date"
+},
+"publisher_url": {
+"@id": "testdgraph2:publisher_url",
+"@type": "rdf:Property",
+"@required": false,
+"@datatype": "xsd:anyURI"
+}
+}
+}
