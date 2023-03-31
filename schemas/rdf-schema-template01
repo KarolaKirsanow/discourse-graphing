@@ -1,0 +1,47 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dgraph: <http://discoursegraphs.ai/vocab#> .
+
+dgraph:Question a rdfs:Class .
+dgraph:Claim a rdfs:Class .
+dgraph:Evidence a rdfs:Class .
+dgraph:Source a rdfs:Class .
+
+dgraph:support a rdf:Property ;
+    rdfs:domain dgraph:Evidence ;
+    rdfs:range dgraph:Claim .
+dgraph:oppose a rdf:Property ;
+    rdfs:domain dgraph:Evidence ;
+    rdfs:range dgraph:Claim .
+dgraph:contextualize a rdf:Property ;
+    rdfs:domain dgraph:Source ;
+    rdfs:range dgraph:Evidence .
+dgraph:inform a rdf:Property ;
+    rdfs:domain dgraph:Claim, dgraph:Evidence ;
+    rdfs:range dgraph:Question .
+
+dgraph:author a rdf:Property ;
+    rdfs:domain dgraph:Question, dgraph: Claim, dgraph:Evidence, dgraph:Source ;
+    rdfs:range xsd:string ;
+    rdf:required "true"^^xsd:boolean .
+dgraph:uri a rdf:Property ;
+    rdfs:domain dgraph:Question, dgraph: Claim, dgraph:Evidence, dgraph:Source ;
+    rdfs:range xsd:anyURI ;
+    rdf:required "true"^^xsd:boolean .
+dgraph:title a rdf:Property ;
+    rdfs:domain dgraph:Source ;
+    rdfs:range xsd:string ;
+    rdf:required "true"^^xsd:boolean .
+dgraph:publisher a rdf:Property ;
+    rdfs:domain dgraph:Source ;
+    rdfs:range xsd:string ;
+    rdf:required "false"^^xsd:boolean .
+dgraph:date a rdf:Property ;
+    rdfs:domain dgraph:Source ;
+    rdfs:range xsd:date ;
+    rdf:required "false"^^xsd:boolean .
+dgraph:publisher_url a rdf:Property ;
+    rdfs:domain dgraph:Source ;
+    rdfs:range xsd:anyURI ;
+    rdf:required "false"^^xsd:boolean .
