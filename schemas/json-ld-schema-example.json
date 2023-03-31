@@ -1,0 +1,102 @@
+{
+    "@context": "test dgraph",
+    "@graph": [
+        {
+            "@id": "question1",
+            "@type": "Question",
+            "author": "Evan Miyazono",
+            "URI": "question1.com",
+            "informs": [
+                {
+                    "@id": "claim1"
+                }
+            ]
+        },
+        {
+            "@id": "claim1",
+            "@type": "Claim",
+            "author": "Karola Kirsanow",
+            "URI": "claim1.com",
+            "informs": [
+                {
+                    "@id": "question1"
+                }
+            ],
+            "supports": [
+                {
+                    "@id": "evidence1"
+                }
+            ],
+            "opposes": [
+                {
+                    "@id": "evidence2"
+                }
+            ]
+        },
+        {
+            "@id": "evidence1",
+            "@type": "Evidence",
+            "author": "Matt Akamatsu",
+            "URI": "evidence1.com",
+            "supports": [
+                {
+                    "@id": "claim1"
+                }
+            ],
+            "informs": [
+                {
+                    "@id": "question1"
+                }
+            ],
+            "contextualizes": [
+                {
+                    "@id": "source1"
+                }
+            ]
+        },
+        {
+            "@id": "evidence2",
+            "@type": "Evidence",
+            "author": "Joel Chan",
+            "URI": "evidence2.com",
+            "opposes": [
+                {
+                    "@id": "claim1"
+                }
+            ],
+            "informs": [
+                {
+                    "@id": "question1"
+                }
+            ],
+            "contextualizes": [
+                {
+                    "@id": "source2"
+                }
+            ]
+        },
+        {
+            "@id": "source1",
+            "@type": "Source",
+            "author": "Convenient Source",
+            "title": "Why Karola is Correct",
+            "publisher": "Source 1 Publisher",
+            "date": "2022-01-01",
+            "publisher_url": "source1.com",
+            "contextualizes": [
+                {
+                    "@id": "evidence1"
+                }
+            ]
+        },
+        {
+            "@id": "source2",
+            "@type": "Source",
+            "author": "Joel Chan",
+            "title": "Self-Citation is Fun",
+            "publisher": "Source 2 Publisher",
+            "date": "2022-01-01",
+            "publisher_url": "source2.com",
+            "contextualizes": [
+                {
+                    "@id": "evidence2
