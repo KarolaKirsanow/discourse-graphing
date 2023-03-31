@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dgraph3: <http://discoursegraphs.ai/> .
+
+dgraph3:question1 rdf:type dgraph3:Question ;
+    dgraph3:author "Joel Chan" ;
+    dgraph3:URI "question1.com" ;
+    dgraph3:informs dgraph3:claim1 .
+
+dgraph3:claim1 rdf:type dgraph3:Claim;
+    dgraph3:author "Sílvia Bessa" ;
+    dgraph3:URI "claim1.com" ;
+    dgraph3:informs dgraph3:question1 ;
+    dgraph3:supports dgraph3:evidence1 ;
+    dgraph3:opposes dgraph3:evidence2 .
+
+dgraph3:evidence1 rdf:type dgraph3:Evidence ;
+    dgraph3:author "Matt Akamatsu" ;
+    dgraph3:URI "evidence1.com" ;
+    dgraph3:supports dgraph3:claim1 ;
+    dgraph3:informs dgraph3:question1 ;
+    dgraph3:contextualizes dgraph3:source1 .
+
+dgraph3:evidence2 rdf:type dgraph3:Evidence ;
+    dgraph3:author "SJ Klein" ;
+    dgraph3:URI "evidence2.com" ;
+    dgraph3:opposes dgraph3:claim1 ;
+    dgraph3:informs dgraph3:question1 ;
+    dgraph3:contextualizes dgraph3:source2 .
+
+dgraph3:source1 rdf:type dgraph3:Source ;
+    dgraph3:author "Charles Darwin" ;
+    dgraph3:title "On the Origin of Species" ;
+    dgraph3:publisher "John Murray" ;
+    dgraph3:date "1859-11-24" ;
+    dgraph3:publisher_url "source1.com" ;
+    dgraph3:contextualizes dgraph3:evidence1 .
+
+dgraph3:source2 rdf:type dgraph3:Source ;
+    dgraph3:author "Ivan Illich" ;
+    dgraph3:title "Tools for Conviviality" ;
+    dgraph3:publisher "Harper & Row" ;
+    dgraph3:date "1973-01-01" ;
+    dgraph3:publisher_url "<http://www.harpercollins.com/imprints/index.aspx?imprintid=517981>" ;
+    dgraph3:contextualizes dgraph3:evidence2 .
+    ```
